@@ -1,4 +1,5 @@
 #include "message.h"
+#include "folder.h"
 
 
 

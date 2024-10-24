@@ -11,13 +11,14 @@
 
 using namespace std;
 
-
+class Folder; //forward declaration
 
 class Message {
 
     friend class Folder;
+    friend void swap(Message&, Message&);
     public:
-       friend void swap(Message&, Message&);
+       
        explicit Message(const std::string &str = ""): contents(str) {}
        Message(const Message&);
        Message& operator=(const Message&);
@@ -33,6 +34,6 @@ class Message {
        void remove_from_folders();
 
 };
-
+void swap(Message&, Message&); 
 
 #endif //_FOLDER_H

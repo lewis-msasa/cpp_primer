@@ -7,10 +7,14 @@
 #include <set>
 #include "message.h"
 
+class Message; 
+
 class Folder {
+    
+    friend void swap(Message&, Message&);
     friend class Message;
 public:
-
+        
 private:
     std::set<Message*> msgs;
 
@@ -20,6 +24,8 @@ private:
     void addMsg(Message *m) { msgs.insert(m); }
     void remMsg(Message *m) { msgs.erase(m); }
 };
+
+
 
 #endif
 
