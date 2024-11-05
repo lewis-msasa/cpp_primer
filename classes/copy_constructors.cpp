@@ -18,6 +18,7 @@ class Foo {
         //Foo(const Foo&) = delete; //to remove copy
         Foo  &operator=(const Foo&); // assignment operator
         Foo &operator=(const Foo&) = delete; //remove assignment
+         Foo &operator=(const Foo&&) = delete; //move assign
         ~Foo(); //destructor
 };
 
