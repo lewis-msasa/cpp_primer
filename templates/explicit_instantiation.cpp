@@ -44,4 +44,31 @@ T maximum(T a, T b){
     return (a > b) ? a : b;
 }
 
+//source file
+template int maximum<int>(int, int);
+template double maximum<double>(double, double);
+
+
+
+/*
+USING EXTERN
+- using extern templates to prevent instantiation
+*/
+
+//header file
+template<typename T>
+class Complex{
+    public:
+        Complex(T real, T imag);
+        T magnitude() const;
+    private:
+        T re, im;
+};
+
+//in one source file
+template class Complex<double>;
+
+//in other source files
+extern template class Complex<double>;
+
 

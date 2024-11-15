@@ -3,10 +3,16 @@
         {
             "type": "cppbuild",
             "label": "C/C++: clang build active file",
-            "command": "/opt/homebrew/opt/llvm/bin/clang++",
+            "command": "/usr/bin/g++",//"/opt/homebrew/opt/llvm/bin/clang++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
+                "-std=c++11",
+                "-I/opt/homebrew/Cellar/boost/1.86.0_2/include", // Boost include path
+                "-L/opt/homebrew/Cellar/boost/1.86.0_2/lib",      // Boost library path
+                "-L/opt/homebrew/Cellar/eigen/3.4.0_1/include",
+                "-L/opt/homebrew/Cellar/mlpack/4.5.0/include/mlpack",
+                "-L/opt/homebrew/Cellar/armadillo/14.0.3/include/armadillo",
                 "-g",
                 "${file}",
                 "-o",
